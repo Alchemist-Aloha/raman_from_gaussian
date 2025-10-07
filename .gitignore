@@ -191,3 +191,5 @@ output/
 results/
 data/
 scratch/
+
+/analysis.ipynb
