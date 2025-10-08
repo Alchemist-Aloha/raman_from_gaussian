@@ -86,7 +86,7 @@ See `raman_from_gaussian.ipynb` for detailed examples:
 - See `Freq=ReadFCHT` in Gaussian documentation for resonance Raman calculations
 
 ### For Non-Resonance Raman (NRR)  
-- Use `freq=raman` with `cphf=rdfreq` with multiple incident light wavelengths at the end of the input file
+- Use `freq=raman cphf=rdfreq` and list multiple incident light wavelengths at the end of the input file
 - Output should contain sections like:
   ```
   Incident light (cm**-1):       0.00  12500.00  20366.60
