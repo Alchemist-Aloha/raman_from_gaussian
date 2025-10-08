@@ -57,37 +57,6 @@ generate_nrr_spectrum(
 )
 ```
 
-### Functions Overview
-
-#### Data Extraction Functions
-
-**`extract_rr(file_path)`**
-- Extracts frequency and Raman activity data from resonance Raman calculations
-- Returns: NumPy array with columns [frequency, Raman_activity]
-
-**`extract_nrr(file_path)`** 
-- Extracts frequency and Raman activities for multiple incident light frequencies
-- Dynamically handles any number of incident light frequencies
-- Returns: NumPy array with columns [frequency, RamAct_Fr1, RamAct_Fr2, ...] and incident light frequencies
-
-#### Spectrum Generation Functions
-
-**`generate_rr_spectrum(min, max, nstep, input_filename, lorentzian_width, gaussian_width, lorentzian_percentage)`**
-- Complete workflow for resonance Raman: extract data → broaden peaks → plot → save CSV
-- Creates Lorentzian/Gaussian broadened spectrum
-
-**`generate_nrr_spectrum(min, max, nstep, input_filename, lorentzian_width, gaussian_width, lorentzian_percentage)`**
-- Complete workflow for non-resonance Raman with multiple incident wavelengths (set with rdfreq in Gaussian input)
-- Creates Lorentzian/Gaussian broadened spectrum
-- Generates separate spectra for each incident light frequency
-- Creates individual plots and CSV files for each incident light
-
-#### Plotting Function
-
-**`plot_raman_spectrum(min, max, nstep, freqs, intensities, lorentzian_width, gaussian_width, lorentzian_percentage)`**
-- Low-level plotting function for custom workflows
-- Plot broadened spectra from Raman activity data
-- Shows comparison between Gaussian, Lorentzian, and combined broadening
 
 ### Parameters
 
