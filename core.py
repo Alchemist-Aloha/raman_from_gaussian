@@ -50,11 +50,12 @@ def generate_rr_spectrum(min, max, nstep, input_filename, lorentzian_width,
     print(filestem)
     frequencies = np.linspace(min, max, nstep)
     data_array = extract_rr(input_filename)
-    central_frequencies = data_array[1:, 0]
-    raman_intensities = data_array[1:, 1]
+    # include all rows from extract_rr (don't drop the first mode)
+    central_frequencies = data_array[:, 0]
+    raman_intensities = data_array[:, 1]
     np.savetxt(
     filedir / (filestem + "_rrcross.csv"),
-    data_array[1:, :], 
+    data_array[:, :], 
     delimiter=",", 
     header="Raman Shift (cm^-1),Sigma", 
     comments='', 
